@@ -1,0 +1,28 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /drone-tracker
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:drone-tracker
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
+  h2:
+    console:
+      enabled: true
+#springdoc:
+#  show-actuator: true
+#  use-management-port: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: openapi, swagger-ui
+#  server:
+#    port: 9090
