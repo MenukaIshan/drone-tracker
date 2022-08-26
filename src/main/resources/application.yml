@@ -15,14 +15,3 @@ spring:
   h2:
     console:
       enabled: true
-#springdoc:
-#  show-actuator: true
-#  use-management-port: true
-
-#management:
-#  endpoints:
-#    web:
-#      exposure:
-#        include: openapi, swagger-ui
-#  server:
-#    port: 9090

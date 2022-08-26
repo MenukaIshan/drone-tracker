@@ -15,7 +15,7 @@
     <description>drone-tracker</description>
     <properties>
         <java.version>1.8</java.version>
-        <springdoc.version>1.6.10</springdoc.version>
+        <springdoc.version>1.6.11</springdoc.version>
     </properties>
     <dependencies>
         <dependency>
