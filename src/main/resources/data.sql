@@ -23,7 +23,7 @@ values ('Heavyweight', '87c87xcsc7dc', 149, 100.0, 'LOADING');
 insert into medication(name, weight, code, image)
 values ('Benadryl', 10.0, 'NDC111899', '/meds/benadryl.jpg');
 insert into medication(name, weight, code, image)
-values ('Band-Aid  Anti-Itch', 136.0, 'ANT327899', '/meds/anti-itch.jpg');
+values ('Anti-Itch', 136.0, 'ANT327899', '/meds/anti-itch.jpg');
 insert into medication(name, weight, code, image)
 values ('Lipitor', 30.0, 'NDC227699', '/meds/lipitor.jpg');
 insert into medication(name, weight, code, image)

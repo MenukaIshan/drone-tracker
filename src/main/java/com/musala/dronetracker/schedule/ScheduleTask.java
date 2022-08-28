@@ -12,6 +12,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+import static com.musala.dronetracker.model.State.IDLE;
+import static com.musala.dronetracker.model.State.RETURNING;
+
 @Component
 public class ScheduleTask {
 
@@ -39,10 +42,10 @@ public class ScheduleTask {
             if (drone.getBatteryPercentage() < 25) {
                 logger.warn("Scheduled: Drone id [{}] has low battery percentage of [{}%]",
                         drone.getDroneId(), drone.getBatteryPercentage());
-                if (drone.getState().equals("DELIVERING") || drone.getState().equals("DELIVERED")) {
-                    drone.setState("RETURNING");
+                if (drone.getState().getStateValue().equals("DELIVERING") || drone.getState().getStateValue().equals("DELIVERED")) {
+                    drone.setState(RETURNING);
                 } else {
-                    drone.setState("IDLE");
+                    drone.setState(IDLE);
                 }
                 droneRepository.save(drone);
             }

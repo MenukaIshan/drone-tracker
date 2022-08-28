@@ -63,8 +63,8 @@ public class DroneServiceImpl implements DroneService {
         logger.info("Service: New Drone [{}] Insert request", drone);
         DTO dto = null;
         try {
-            droneRepository.saveNewDrone(drone.getModel(), drone.getSerialNumber(), drone.getWeight(),
-                    drone.getBatteryPercentage(), drone.getState());
+            droneRepository.saveNewDrone(drone.getModel().getModelValue(), drone.getSerialNumber(), drone.getWeight(),
+                    drone.getBatteryPercentage(), drone.getState().getStateValue());
             logger.info("Service: Drone [{}] Successfully saved", drone);
             dto = new DTO(HttpStatus.CREATED, "Drone was successfully added", drone);
         } catch (DataIntegrityViolationException die) {
@@ -140,7 +140,7 @@ public class DroneServiceImpl implements DroneService {
 
         if (droneOptional.isPresent()) {
             Drone drone = droneOptional.get();
-            String droneStatus = drone.getState();
+            String droneStatus = drone.getState().getStateValue();
 
             if (!(droneStatus.equals("IDLE") || droneStatus.equals("LOADING"))) {
                 dto = new DTO(HttpStatus.CONFLICT, "Drone is not in a loadable status", drone);
@@ -174,7 +174,8 @@ public class DroneServiceImpl implements DroneService {
             }
             drone.setWeight(totalMedicineWeight);
             droneRepository.save(drone);
-            dto = new DTO(HttpStatus.CREATED, "Success", droneRepository.findById(droneId));
+            drone.setMedications(combineMedicineList);
+            dto = new DTO(HttpStatus.CREATED, "Success", drone);
         } else {
             logger.warn("Service: No Drone found for id [{}]", droneId);
             dto = new DTO(HttpStatus.NOT_FOUND, "No drone found for id - " + droneId, null);
