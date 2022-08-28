@@ -53,6 +53,8 @@ public class DispatchController {
     @PostMapping("/drones/{droneId}/medications")
     public ResponseEntity loadDroneWithMedication(@RequestBody List<String> medicationList,
                                                   @PathVariable(name = "droneId", required = true) Integer droneId) {
+        logger.info("Controller: Medication loading request received for drone id [{}] with medicines [{}]",
+                droneId, medicationList);
         return droneService.loadMedicationWithDrone(medicationList, droneId);
     }
 

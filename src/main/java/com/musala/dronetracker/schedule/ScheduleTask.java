@@ -32,6 +32,8 @@ public class ScheduleTask {
         logger.info("Scheduled: [{}] of Drones retrieved for check", droneList.size());
 
         for (Drone drone : droneList) {
+            logger.info("Scheduled: Drone id [{}] has battery of [{}%]",
+                    drone.getDroneId(), drone.getBatteryPercentage());
             DroneBatteryStatus droneBatteryStatus = new DroneBatteryStatus(drone.getDroneId(),
                     drone.getBatteryPercentage());
             if (drone.getBatteryPercentage() < 25) {
