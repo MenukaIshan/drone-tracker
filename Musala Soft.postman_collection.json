@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "d1868d30-62a1-4bde-b850-2cb948773b29",
+		"name": "Musala Soft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1994776"
+	},
+	"item": [
+		{
+			"name": "below 25% battery Medicine load",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"NDC118555\", \"NDC456959\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drone-tracker/drones/2/medications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drone-tracker",
+						"drones",
+						"2",
+						"medications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Medicine load happy path",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"NDC118555\", \"NDC456959\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drone-tracker/drones/3/medications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drone-tracker",
+						"drones",
+						"3",
+						"medications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all drones",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNumber\": \"76fd823382982\",\r\n    \"model\": \"Cruiserweight\",\r\n    \"weight\": 0.0,\r\n    \"batteryPercentage\": 100.0,\r\n    \"state\": \"IDLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drone-tracker/drones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drone-tracker",
+						"drones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new drone",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNumber\": \"76fd823382982\",\r\n    \"model\": \"Cruiserweight\",\r\n    \"weight\": 0.0,\r\n    \"batteryPercentage\": 100.0,\r\n    \"state\": \"IDLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drone-tracker/drones",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drone-tracker",
+						"drones"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Checking loaded Medicine in a drone",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNumber\": \"76fd823382982\",\r\n    \"model\": \"Cruiserweight\",\r\n    \"weight\": 0.0,\r\n    \"batteryPercentage\": 100.0,\r\n    \"state\": \"IDLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drone-tracker/drones/1/medications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drone-tracker",
+						"drones",
+						"1",
+						"medications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Available drones for medicine loading",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNumber\": \"76fd823382982\",\r\n    \"model\": \"Cruiserweight\",\r\n    \"weight\": 0.0,\r\n    \"batteryPercentage\": 100.0,\r\n    \"state\": \"IDLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drone-tracker/drones/available",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drone-tracker",
+						"drones",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check battery Status of a given drone",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serialNumber\": \"76fd823382982\",\r\n    \"model\": \"Cruiserweight\",\r\n    \"weight\": 0.0,\r\n    \"batteryPercentage\": 100.0,\r\n    \"state\": \"IDLE\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/drone-tracker/drones/2/battery-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"drone-tracker",
+						"drones",
+						"2",
+						"battery-status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

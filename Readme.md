@@ -8,6 +8,13 @@
 * We don't upload images as blob data type to database.
 * Medication images were stored in the server as jpg files, and we store only relative path to image.
 * I have treated Medicine as item rather than item in a inventory, thus making drone and medicine relationship many to many
+* But I have only consider the one to many implementation from drone to medication, because of no requirement
+* I only consider IDLE and LOADING as Medicine Loadable status
+
+### Instructions
+
+* Please use import `Musala Soft.postman_collection.json` collection for Postman testing.
+* Battery Status checking Scheduler works within 1 minute frame
 
 ### Swagger
 
